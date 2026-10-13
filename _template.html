@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="vi" data-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f56a5">
+
+  <!-- SEO: thay nội dung này theo từng trang trước khi hoàn thành -->
+  <title>[Tên trang] | Văn phòng phẩm SV</title>
+  <meta name="description" content="[Mô tả ngắn gọn, riêng biệt cho trang — khoảng 150–160 ký tự]">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="[URL chính thức của trang]">
+
+  <!-- Open Graph: cập nhật theo nội dung của từng trang -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Văn phòng phẩm SV">
+  <meta property="og:title" content="[Tiêu đề chia sẻ]">
+  <meta property="og:description" content="[Mô tả chia sẻ]">
+  <meta property="og:url" content="[URL chính thức của trang]">
+  <meta property="og:image" content="../assets/images/banners/og-default.jpg">
+  <meta property="og:image:alt" content="[Mô tả ảnh Open Graph]">
+
+  <!-- Font chữ của nhóm -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS: giữ đúng thứ tự để theme của nhóm ghi đè Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/tokens.css" rel="stylesheet">
+  <link href="../css/bootstrap-override.css" rel="stylesheet">
+  <link href="../css/base.css" rel="stylesheet">
+  <link href="../css/components.css" rel="stylesheet">
+  <!-- Chỉ mở hai dòng dưới ở trang có dùng thẻ sản phẩm / CSS riêng -->
+  <!-- <link href="../css/product-card.css" rel="stylesheet"> -->
+  <!-- <link href="../css/pages/ten-trang.css" rel="stylesheet"> -->
+
+  <!-- Favicon: thêm file assets/favicon.ico khi đã có -->
+  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+</head>
+<body>
+  <a class="visually-hidden-focusable position-absolute top-0 start-0 p-3 bg-body" href="#main-content">Bỏ qua điều hướng, đến nội dung chính</a>
+
+  <!-- header.js sẽ tự chèn nội dung đầu trang vào đây -->
+  <header id="site-header"></header>
+
+  <main id="main-content" class="container py-5">
+    <!-- ================================================================
+         KHUNG NỘI DUNG MẪU
+         Xóa phần minh họa này và thay bằng bố cục theo wireframe của trang.
+         Dùng class Bootstrap có sẵn; class tự viết phải có tiền tố sv-.
+         ================================================================ -->
+    <section class="mb-5" aria-labelledby="page-title">
+      <p class="text-uppercase small fw-semibold text-secondary mb-2">Văn phòng phẩm SV</p>
+      <h1 id="page-title">Tiêu đề trang</h1>
+      <p class="lead text-secondary">Mô tả ngắn về nội dung chính của trang.</p>
+    </section>
+
+    <section class="mb-5" aria-labelledby="sample-components-title">
+      <h2 id="sample-components-title" class="h3 mb-3">Khu vực thử thành phần Bootstrap</h2>
+      <p class="text-secondary">Dùng khu vực này để kiểm tra màu sắc, kiểu chữ và chế độ sáng/tối. Xóa trước khi dựng trang thật.</p>
+
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <button type="button" class="btn btn-primary">Nút chính</button>
+        <button type="button" class="btn btn-outline-primary">Nút viền</button>
+        <button type="button" class="btn btn-warning">Nút nhấn</button>
+        <button type="button" class="btn btn-secondary" id="template-toast-button">Thử thông báo</button>
+        <button type="button" class="btn btn-outline-secondary" id="template-theme-button" aria-pressed="false">Đổi sáng / tối</button>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="h5 card-title">Ô nhập liệu</h3>
+              <label for="template-example-input" class="form-label">Tên mẫu</label>
+              <input id="template-example-input" class="form-control" type="text" placeholder="Nhập nội dung thử">
+              <div class="form-text">Ví dụ ô nhập dùng Bootstrap.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="h5 card-title">Hộp thoại</h3>
+              <p class="card-text">Kiểm tra modal hoạt động cùng Bootstrap.</p>
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#template-example-modal">Mở hộp thoại</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion mt-4" id="template-example-accordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="template-accordion-heading">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#template-accordion-panel" aria-expanded="true" aria-controls="template-accordion-panel">Mục nội dung mở rộng</button>
+          </h3>
+          <div id="template-accordion-panel" class="accordion-collapse collapse show" aria-labelledby="template-accordion-heading" data-bs-parent="#template-example-accordion">
+            <div class="accordion-body">Nội dung mẫu của accordion. Có thể dùng thành phần này cho FAQ hoặc chính sách.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trang thật đặt nội dung chính tại đây. -->
+  </main>
+
+  <!-- footer.js sẽ tự chèn nội dung chân trang vào đây -->
+  <footer id="site-footer"></footer>
+
+  <!-- Modal mẫu để kiểm tra Bootstrap; xóa nếu trang không cần -->
+  <div class="modal fade" id="template-example-modal" tabindex="-1" aria-labelledby="template-example-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="template-example-modal-title">Hộp thoại mẫu</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+        </div>
+        <div class="modal-body">Nếu hộp thoại hiển thị đúng, Bootstrap JavaScript đã được nạp.</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Đã hiểu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Thông báo mẫu; toast.js thật có thể cung cấp showToast() -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" aria-live="polite" aria-atomic="true">
+    <div id="template-example-toast" class="toast" role="status">
+      <div class="toast-header">
+        <strong class="me-auto">Thông báo mẫu</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Đóng"></button>
+      </div>
+      <div class="toast-body">Bootstrap Toast đang hoạt động.</div>
+    </div>
+  </div>
+
+  <!-- Bootstrap bundle cần có trước các script của dự án -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 1. Tiện ích nền -->
+  <script src="../js/core/utils.js"></script>
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/validate.js"></script>
+  <script src="../js/core/toast.js"></script>
+
+  <!-- 2. Dữ liệu: nạp trước module vì module có thể đọc SV_DATA ngay khi chạy -->
+  <script src="../js/data/products.data.js"></script>
+  <script src="../js/data/categories.data.js"></script>
+  <script src="../js/data/coupons.data.js"></script>
+  <script src="../js/data/shipping.data.js"></script>
+  <script src="../js/data/posts.data.js"></script>
+  <script src="../js/data/faqs.data.js"></script>
+
+  <!-- 3. Module nghiệp vụ -->
+  <script src="../js/modules/products.js"></script>
+  <script src="../js/modules/cart.js"></script>
+  <script src="../js/modules/coupons.js"></script>
+  <script src="../js/modules/orders.js"></script>
+  <script src="../js/modules/auth.js"></script>
+  <script src="../js/modules/wishlist.js"></script>
+
+  <!-- 4. Bản giả chỉ bù những module chưa có; luôn nạp sau module thật -->
+  <script src="../js/core/stubs.js"></script>
+
+  <!-- 5. Thành phần giao diện dùng chung -->
+  <script src="../js/components/product-card.js"></script>
+  <script src="../js/components/header.js"></script>
+  <script src="../js/components/footer.js"></script>
+
+  <!-- 6. Mỗi trang bỏ comment và đổi thành file JS tương ứng của mình -->
+  <!-- <script src="../js/pages/ten-trang.js"></script> -->
+
+  <!-- Script minh họa riêng của template; xóa khi chuyển thành trang thật -->
+  <script>
+    (() => {
+      const toastButton = document.getElementById('template-toast-button');
+      const toastElement = document.getElementById('template-example-toast');
+      const themeButton = document.getElementById('template-theme-button');
+
+      toastButton?.addEventListener('click', () => {
+        if (typeof window.showToast === 'function') {
+          window.showToast('Bootstrap Toast đang hoạt động.', 'success');
+          return;
+        }
+        if (window.bootstrap && toastElement) {
+          window.bootstrap.Toast.getOrCreateInstance(toastElement).show();
+        }
+      });
+
+      themeButton?.addEventListener('click', () => {
+        const root = document.documentElement;
+        const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', nextTheme);
+        root.setAttribute('data-bs-theme', nextTheme);
+        themeButton.setAttribute('aria-pressed', String(nextTheme === 'dark'));
+      });
+    })();
+  </script>
+</body>
+</html>

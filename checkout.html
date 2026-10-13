@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="vi" data-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f56a5">
+
+  <!-- SEO: thay nội dung này theo từng trang trước khi hoàn thành -->
+  <title>Thanh toán | Văn phòng phẩm SV</title>
+  <meta name="description" content="Nhập thông tin giao hàng, lựa chọn phương thức thanh toán và kiểm tra đơn hàng tại Văn phòng phẩm SV.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="[URL chính thức của trang]">
+
+  <!-- Open Graph: cập nhật theo nội dung của từng trang -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Văn phòng phẩm SV">
+  <meta property="og:title" content="Thanh toán | Văn phòng phẩm SV">
+  <meta property="og:description" content="Hoàn tất thông tin giao hàng và đặt mua văn phòng phẩm tại Văn phòng phẩm SV.">
+  <meta property="og:url" content="[URL chính thức của trang]">
+  <meta property="og:image" content="../assets/images/banners/og-default.jpg">
+  <meta property="og:image:alt" content="[Mô tả ảnh Open Graph]">
+
+  <!-- Font chữ của nhóm -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS: giữ đúng thứ tự để theme của nhóm ghi đè Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/tokens.css" rel="stylesheet">
+  <link href="../css/bootstrap-override.css" rel="stylesheet">
+  <link href="../css/base.css" rel="stylesheet">
+  <link href="../css/components.css" rel="stylesheet">
+  <!-- Chỉ mở hai dòng dưới ở trang có dùng thẻ sản phẩm / CSS riêng -->
+  <!-- <link href="../css/product-card.css" rel="stylesheet"> -->
+  <link href="../css/pages/checkout.css" rel="stylesheet">
+
+  <!-- Favicon: thêm file assets/favicon.ico khi đã có -->
+  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+</head>
+<body>
+  <a class="visually-hidden-focusable position-absolute top-0 start-0 p-3 bg-body" href="#main-content">Bỏ qua điều hướng, đến nội dung chính</a>
+
+  <!-- header.js sẽ tự chèn nội dung đầu trang vào đây -->
+  <header id="site-header"></header>
+
+  <main id="main-content" class="container py-5">
+    <section class="mb-4" aria-labelledby="page-title">
+      <nav aria-label="Đường dẫn">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+        </ol>
+      </nav>
+    </section>
+
+    <!-- Các bước đặt hàng -->
+    <nav aria-label="Tiến trình đặt hàng" class="mb-4">
+      <ol class="list-group list-group-horizontal">
+        <li class="list-group-item flex-fill text-center">
+          1. Giỏ hàng
+        </li>
+        <li class="list-group-item flex-fill text-center active">
+          2. Thanh toán
+        </li>
+        <li class="list-group-item flex-fill text-center">
+          3. Hoàn tất
+        </li>
+      </ol>
+    </nav>
+
+    <div class="row g-4">
+      <!-- Cột trái: form -->
+      <div class="col-12 col-lg-8">
+        <form id="checkout-form" novalidate>
+          <section class="card mb-4">
+            <div class="card-body">
+              <h2 class="h4 mb-4">Thông tin giao hàng</h2>
+
+              <div class="mb-3">
+                <label for="full-name" class="form-label">Họ và tên</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="full-name"
+                  name="fullName"
+                  autocomplete="name"
+                  required
+                >
+                <div class="invalid-feedback"></div>
+              </div>
+
+              <div class="mb-3">
+                <label for="phone" class="form-label">Số điện thoại</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  inputmode="numeric"
+                  required
+                >
+                <div class="invalid-feedback"></div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                >
+                <div class="invalid-feedback"></div>
+              </div>
+
+              <div class="mb-3">
+                <label for="province" class="form-label">Tỉnh / Thành phố</label>
+                <select
+                  class="form-select"
+                  id="province"
+                  name="province"
+                  required
+                >
+                  <option value="">Chọn tỉnh / thành phố</option>
+                  <option value="An Giang">An Giang</option>
+                  <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+                  <option value="Bắc Giang">Bắc Giang</option>
+                  <option value="Bắc Kạn">Bắc Kạn</option>
+                  <option value="Bạc Liêu">Bạc Liêu</option>
+                  <option value="Bắc Ninh">Bắc Ninh</option>
+                  <option value="Bến Tre">Bến Tre</option>
+                  <option value="Bình Định">Bình Định</option>
+                  <option value="Bình Dương">Bình Dương</option>
+                  <option value="Bình Phước">Bình Phước</option>
+                  <option value="Bình Thuận">Bình Thuận</option>
+                  <option value="Cà Mau">Cà Mau</option>
+                  <option value="Cần Thơ">Cần Thơ</option>
+                  <option value="Cao Bằng">Cao Bằng</option>
+                  <option value="Đà Nẵng">Đà Nẵng</option>
+                  <option value="Đắk Lắk">Đắk Lắk</option>
+                  <option value="Đắk Nông">Đắk Nông</option>
+                  <option value="Điện Biên">Điện Biên</option>
+                  <option value="Đồng Nai">Đồng Nai</option>
+                  <option value="Đồng Tháp">Đồng Tháp</option>
+                  <option value="Gia Lai">Gia Lai</option>
+                  <option value="Hà Giang">Hà Giang</option>
+                  <option value="Hà Nam">Hà Nam</option>
+                  <option value="Hà Nội">Hà Nội</option>
+                  <option value="Hà Tĩnh">Hà Tĩnh</option>
+                  <option value="Hải Dương">Hải Dương</option>
+                  <option value="Hải Phòng">Hải Phòng</option>
+                  <option value="Hậu Giang">Hậu Giang</option>
+                  <option value="Hòa Bình">Hòa Bình</option>
+                  <option value="Hưng Yên">Hưng Yên</option>
+                  <option value="Khánh Hòa">Khánh Hòa</option>
+                  <option value="Kiên Giang">Kiên Giang</option>
+                  <option value="Kon Tum">Kon Tum</option>
+                  <option value="Lai Châu">Lai Châu</option>
+                  <option value="Lâm Đồng">Lâm Đồng</option>
+                  <option value="Lạng Sơn">Lạng Sơn</option>
+                  <option value="Lào Cai">Lào Cai</option>
+                  <option value="Long An">Long An</option>
+                  <option value="Nam Định">Nam Định</option>
+                  <option value="Nghệ An">Nghệ An</option>
+                  <option value="Ninh Bình">Ninh Bình</option>
+                  <option value="Ninh Thuận">Ninh Thuận</option>
+                  <option value="Phú Thọ">Phú Thọ</option>
+                  <option value="Phú Yên">Phú Yên</option>
+                  <option value="Quảng Bình">Quảng Bình</option>
+                  <option value="Quảng Nam">Quảng Nam</option>
+                  <option value="Quảng Ngãi">Quảng Ngãi</option>
+                  <option value="Quảng Ninh">Quảng Ninh</option>
+                  <option value="Quảng Trị">Quảng Trị</option>
+                  <option value="Sóc Trăng">Sóc Trăng</option>
+                  <option value="Sơn La">Sơn La</option>
+                  <option value="Tây Ninh">Tây Ninh</option>
+                  <option value="Thái Bình">Thái Bình</option>
+                  <option value="Thái Nguyên">Thái Nguyên</option>
+                  <option value="Thanh Hóa">Thanh Hóa</option>
+                  <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+                  <option value="Tiền Giang">Tiền Giang</option>
+                  <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+                  <option value="Trà Vinh">Trà Vinh</option>
+                  <option value="Tuyên Quang">Tuyên Quang</option>
+                  <option value="Vĩnh Long">Vĩnh Long</option>
+                  <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                  <option value="Yên Bái">Yên Bái</option>
+                </select>
+                <div class="invalid-feedback"></div>
+              </div>
+
+              <div class="mb-3">
+                <label for="district" class="form-label">Quận / Huyện</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="district"
+                  name="district"
+                  required
+                >
+                <div class="invalid-feedback"></div>
+              </div>
+
+              <div class="mb-3">
+                <label for="ward" class="form-label">Phường / Xã</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ward"
+                  name="ward"
+                  required
+                >
+                <div class="invalid-feedback"></div>
+              </div>
+
+              <div class="mb-3">
+                <label for="address" class="form-label">Địa chỉ chi tiết</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  name="address"
+                  autocomplete="street-address"
+                  required
+                >
+                <div class="invalid-feedback"></div>
+              </div>
+
+              <button
+                type="button"
+                id="save-shipping"
+                class="btn btn-primary"
+                >
+                Lưu thông tin
+            </button>
+            </div>
+          </section>
+
+          <section class="card mb-4">
+            <div class="card-body">
+              <h2 class="h4 mb-3">Giao hàng & thanh toán</h2>
+
+              <fieldset class="mb-4">
+                
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="shippingMethod"
+                    id="shipping-standard"
+                    value="standard"
+                    checked
+                  >
+                  <label class="form-check-label" for="shipping-standard">
+                    Giao tiêu chuẩn
+                  </label>
+                </div>
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="paymentMethod"
+                    id="payment-cod"
+                    value="cod"
+                    checked
+                  >
+                  <label class="form-check-label" for="payment-cod">
+                    Thanh toán khi nhận hàng (COD)
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="paymentMethod"
+                    id="payment-bank"
+                    value="bank"
+                  >
+                  <label class="form-check-label" for="payment-bank">
+                    Chuyển khoản ngân hàng
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="paymentMethod"
+                    id="payment-wallet"
+                    value="wallet"
+                  >
+                  <label class="form-check-label" for="payment-wallet">
+                    Ví điện tử (mô phỏng)
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="mb-3">
+                <label for="order-note" class="form-label fw-semibold">
+                  Ghi chú đơn hàng
+                </label>
+                <textarea
+                  class="form-control"
+                  id="order-note"
+                  name="note"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="agree-terms"
+                  name="agreeTerms"
+                  required
+                >
+                <label class="form-check-label" for="agree-terms">
+                  Tôi đồng ý với điều khoản mua hàng.
+                </label>
+                <div class="invalid-feedback">
+                  Bạn cần đồng ý với điều khoản trước khi đặt hàng.
+                </div>
+              </div>
+            </div>
+          </section>
+        </form>
+      </div>
+
+      <!-- Cột phải: tóm tắt đơn -->
+      <aside class="col-12 col-lg-4" aria-labelledby="order-summary-title">
+        <div class="card">
+          <div class="card-body">
+            <h2 id="order-summary-title" class="h4 mb-3">
+              Tóm tắt đơn hàng
+            </h2>
+
+            <div id="checkout-items">
+              <!-- JS sẽ hiển thị sản phẩm trong giỏ ở đây -->
+
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span>Tạm tính</span>
+              <span id="checkout-subtotal">0đ</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span>Vận chuyển</span>
+              <span id="checkout-shipping">0đ</span>
+            </div>
+
+            <div class="mb-3">
+              <label for="coupon-code" class="form-label">Mã giảm giá</label>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="coupon-code"
+                  placeholder="Nhập mã"
+                >
+                <button class="btn btn-outline-primary" type="button" id="apply-coupon">
+                  Áp dụng
+                </button>
+              </div>
+              <div id="coupon-feedback" class="small mt-2" aria-live="polite"></div>
+            </div>
+
+            <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
+              <span>Tổng thanh toán</span>
+              <span id="checkout-total">0đ</span>
+            </div>
+
+            <button
+              type="submit"
+              form="checkout-form"
+              id="place-order"
+              class="btn btn-primary w-100"
+            >
+              Đặt hàng
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- footer.js sẽ tự chèn nội dung chân trang vào đây -->
+  <footer id="site-footer"></footer>
+
+ 
+
+  <!-- Thông báo mẫu; toast.js thật có thể cung cấp showToast() -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" aria-live="polite" aria-atomic="true">
+    <div id="template-example-toast" class="toast" role="status">
+      <div class="toast-header">
+        <strong class="me-auto">Thông báo mẫu</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Đóng"></button>
+      </div>
+      <div class="toast-body">Bootstrap Toast đang hoạt động.</div>
+    </div>
+  </div>
+
+  <!-- Bootstrap bundle cần có trước các script của dự án -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 1. Tiện ích nền -->
+  <script src="../js/core/utils.js"></script>
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/validate.js"></script>
+  <script src="../js/core/toast.js"></script>
+
+  <!-- 2. Dữ liệu: nạp trước module vì module có thể đọc SV_DATA ngay khi chạy -->
+  <script src="../js/data/products.data.js"></script>
+  <script src="../js/data/categories.data.js"></script>
+  <script src="../js/data/coupons.data.js"></script>
+  <script src="../js/data/shipping.data.js"></script>
+  <script src="../js/data/posts.data.js"></script>
+  <script src="../js/data/faqs.data.js"></script>
+
+  <!-- 3. Module nghiệp vụ -->
+  <script src="../js/modules/products.js"></script>
+  <script src="../js/modules/cart.js"></script>
+  <script src="../js/modules/coupons.js"></script>
+  <script src="../js/modules/orders.js"></script>
+  <script src="../js/modules/auth.js"></script>
+  <script src="../js/modules/wishlist.js"></script>
+
+  <!-- 4. Bản giả chỉ bù những module chưa có; luôn nạp sau module thật -->
+  <script src="../js/core/stubs.js"></script>
+
+  <!-- 5. Thành phần giao diện dùng chung -->
+  <script src="../js/components/product-card.js"></script>
+  <script src="../js/components/header.js"></script>
+  <script src="../js/components/footer.js"></script>
+
+
+  <script src="../js/pages/checkout.js"></script>
+
+  <!-- Script minh họa riêng của template; xóa khi chuyển thành trang thật -->
+  <script>
+    (() => {
+      const toastButton = document.getElementById('template-toast-button');
+      const toastElement = document.getElementById('template-example-toast');
+      const themeButton = document.getElementById('template-theme-button');
+
+      toastButton?.addEventListener('click', () => {
+        if (typeof window.showToast === 'function') {
+          window.showToast('Bootstrap Toast đang hoạt động.', 'success');
+          return;
+        }
+        if (window.bootstrap && toastElement) {
+          window.bootstrap.Toast.getOrCreateInstance(toastElement).show();
+        }
+      });
+
+      themeButton?.addEventListener('click', () => {
+        const root = document.documentElement;
+        const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', nextTheme);
+        root.setAttribute('data-bs-theme', nextTheme);
+        themeButton.setAttribute('aria-pressed', String(nextTheme === 'dark'));
+      });
+    })();
+  </script>
+</body>
+</html>
